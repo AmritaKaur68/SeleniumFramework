@@ -16,16 +16,16 @@ public class LandingPage extends AbstractComponents {
     }
 
 
-    @FindBy(id="userEmail")
+    @FindBy(id = "userEmail")
     WebElement userEmail;
 
-    @FindBy(id="userPassword")
+    @FindBy(id = "userPassword")
     WebElement userPassword;
 
-    @FindBy(id="login")
+    @FindBy(id = "login")
     WebElement submit;
 
-    @FindBy(css="[class*='flyInOut']")
+    @FindBy(css = "[class*='flyInOut']")
     WebElement errorMessage;
 
     public ProductCatalouge loginApplication(String email, String password) {
@@ -36,12 +36,12 @@ public class LandingPage extends AbstractComponents {
         return productCatalogue;
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         waitForElementToAppear(errorMessage);
         return errorMessage.getText();
     }
 
-    public void goTo(){
+    public void goTo() {
         driver.get("https://rahulshettyacademy.com/client");
     }
 }

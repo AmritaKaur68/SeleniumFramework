@@ -1,4 +1,3 @@
-
 @tag
 Feature: Error validation
   I want to use this template for my feature file
@@ -11,5 +10,5 @@ Feature: Error validation
     Then "Incorrect email or password." message is displayed
 
     Examples:
-      | name  								|  password		    |
-      | rahulshetty@gmail.com |  Iamking@0      |
+      | name                  | password  |
+      | rahulshetty@gmail.com | Iamking@0 |

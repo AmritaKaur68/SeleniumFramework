@@ -15,6 +15,7 @@ public class Listeners extends BaseTest implements ITestListener {
     ExtentTest test;
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Thread safe
+
     @Override
     public void onTestStart(ITestResult result) {
 
@@ -44,7 +45,7 @@ public class Listeners extends BaseTest implements ITestListener {
         String filePath = null;
         try {
 
-            filePath = getScreenshot(result.getMethod().getMethodName(),driver);
+            filePath = getScreenshot(result.getMethod().getMethodName(), driver);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -16,43 +16,42 @@ public class AbstractComponents {
 
     WebDriver driver;
 
-    @FindBy(css="[routerlink*='cart']")
+    @FindBy(css = "[routerlink*='cart']")
     WebElement cartHeader;
 
-    @FindBy(css="[routerlink*='myorders']")
+    @FindBy(css = "[routerlink*='myorders']")
     WebElement orderHeader;
 
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public void waitForElementToAppear(By findBy){
+    public void waitForElementToAppear(By findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
     }
 
-    public void waitForElementToAppear(WebElement ele){
+    public void waitForElementToAppear(WebElement ele) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
 
-    public void waitForElementToDisappear(WebElement ele){
+    public void waitForElementToDisappear(WebElement ele) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.invisibilityOf(ele));
     }
 
-    public void waitForElementToDisappear(By findBy){
+    public void waitForElementToDisappear(By findBy) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(findBy)));
     }
 
     public CartPage goToCartPage() {
         cartHeader.click();
-        try
-        {
-            Thread.sleep(3000);}
-        catch(InterruptedException e){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
             System.out.println("exception is there");
         }
         CartPage cartpage = new CartPage(driver);
@@ -61,10 +60,9 @@ public class AbstractComponents {
 
     public OrderPage goToOrdersPage() {
         orderHeader.click();
-        try
-        {
-            Thread.sleep(3000);}
-        catch(InterruptedException e){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
             System.out.println("exception is there");
         }
         OrderPage orderpage = new OrderPage(driver);

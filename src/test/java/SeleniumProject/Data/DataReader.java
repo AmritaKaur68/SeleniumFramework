@@ -16,10 +16,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class DataReader {
 
 
-    public List<HashMap<String, String>> getJsonDataToMap() throws IOException
-    {
+    public List<HashMap<String, String>> getJsonDataToMap() throws IOException {
         //read json to string
-        String jsonContent = 	FileUtils.readFileToString(new File(System.getProperty("user.dir")+
+        String jsonContent = FileUtils.readFileToString(new File(System.getProperty("user.dir") +
                         "//src//test//java//SeleniumProject//Data//PurchaseOrder.json"),
                 StandardCharsets.UTF_8);
 

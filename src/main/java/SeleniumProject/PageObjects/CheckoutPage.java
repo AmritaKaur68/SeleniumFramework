@@ -15,29 +15,29 @@ public class CheckoutPage extends AbstractComponents {
     public CheckoutPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css="[placeholder='Select Country']")
+    @FindBy(css = "[placeholder='Select Country']")
     WebElement country;
 
-    @FindBy(css=".action__submit")
+    @FindBy(css = ".action__submit")
     WebElement submit;
 
-    @FindBy(xpath="//button[contains(@class,'ta-item')][2]")
+    @FindBy(xpath = "//button[contains(@class,'ta-item')][2]")
     WebElement countrySelect;
     By results = By.cssSelector(".ta-results");
 
-    public void SelectCountry(String CountryName){
+    public void SelectCountry(String CountryName) {
         Actions a = new Actions(driver);
-            a.sendKeys(country,CountryName).build().perform();
-            waitForElementToAppear(results);
-            countrySelect.click();
+        a.sendKeys(country, CountryName).build().perform();
+        waitForElementToAppear(results);
+        countrySelect.click();
 
     }
 
 
-    public ConfirmationPage SubmitOrder(){
+    public ConfirmationPage SubmitOrder() {
         submit.click();
         return new ConfirmationPage(driver);
     }

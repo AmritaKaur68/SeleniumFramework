@@ -12,16 +12,14 @@ public class ConfirmationPage extends AbstractComponents {
     public ConfirmationPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css=".hero-primary")
+    @FindBy(css = ".hero-primary")
     WebElement confirmMessage;
 
-    public String getConfirmationMessage(){
+    public String getConfirmationMessage() {
         waitForElementToAppear(confirmMessage);
         return confirmMessage.getText();
     }
-
-
 }

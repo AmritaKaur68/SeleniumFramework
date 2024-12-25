@@ -27,5 +27,5 @@ Feature: Purchase the order from Ecommerce Website
     Then "THANKYOU FOR THE ORDER." message is displayed on ConfirmationPage
 
     Examples:
-      | name | password    | productName     |
-      | shetty@gmail.com     | Iamking@000 | ADIDAS ORIGINAL |
+      | name             | password    | productName     |
+      | shetty@gmail.com | Iamking@000 | ADIDAS ORIGINAL |
